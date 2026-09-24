@@ -46,7 +46,7 @@ real content: Professional Experience (dates/titles), Publications (every
 entry), Speaking engagements (every entry), Teaching (courses), Ideas &
 Perspectives (all articles — currently an honest empty state), Selected
 Projects (collaborators/methods/outputs), Contact (all external profile
-links), CV file, portrait photo.
+links), CV file.
 
 Copy that **is** real (used near-verbatim from the client's brief, not
 invented): the headline, subhead, expertise line, research-philosophy
@@ -67,10 +67,11 @@ Treat all of that as approved editorial copy, not draft.
   Plex Sans (body/UI) + IBM Plex Mono (eyebrows/labels/archival tags). All
   Google Fonts (free), standing in for the brief's paid suggestions
   (Freight/Tiempos, Neue Haas).
-- **Imagery:** no AI-generated portrait. Hero uses a labelled
-  `[PROFESSIONAL PORTRAIT]` placeholder with an editorial/archival treatment
-  (contour-line + grid motif), not a corporate headshot card. Swap for a real
-  photo before launch.
+- **Imagery:** no AI-generated portrait. Hero shows a real client-supplied
+  photo (`assets/portrait-leia-belt.webp`) against the editorial/archival
+  contour-line + grid motif, background removed with `rembg` (alpha matting +
+  a connected-component cleanup pass to drop stray background specks — see
+  the note below). Not a corporate headshot card.
 
 ## Structure delivered
 
@@ -106,6 +107,13 @@ site (GitHub Pages, same every time)".
 
 - 2026-09-21 — Built full first draft from the client's design brief with
   placeholders for all unverified facts. Needs: real bio/CV, real
-  publications list, real portrait, real contact links, confirmed working
-  title for the sundown-towns project (used "Mapping the Afterlife of
-  Sundown Towns" as a placeholder working title), confirmed domain/repo name.
+  publications list, real contact links, confirmed working title for the
+  sundown-towns project (used "Mapping the Afterlife of Sundown Towns" as a
+  placeholder working title), confirmed domain/repo name.
+- 2026-09-23 — Added the client's real portrait photo to the hero
+  (`assets/portrait-leia-belt.webp`), background removed. The automated
+  cutout has some residual color fringing in the hair from the original
+  busy painted backdrop (a hard case for any background-removal tool without
+  a plain backdrop) — usable now, but worth a professional retouch or a
+  reshoot against a plain background before public launch. See the
+  `[VERIFY BEFORE PUBLISHING]` caption under the portrait.
