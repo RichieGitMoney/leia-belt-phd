@@ -37,12 +37,13 @@ placeholder convention:
 - `[VERIFY BEFORE PUBLISHING]` — facts entered but not yet confirmed.
 
 **Before launch, replace every remaining bracketed placeholder** — search the
-file for `[ADD ACTUAL` and `[VERIFY BEFORE`. What's still placeholder after
-the CV pass: LinkedIn URL, Google Scholar profile URL, University faculty
-profile URL, DOI/full-text links for most publications (only the Dryad
-dataset has a confirmed link), teaching philosophy statement, sample syllabi,
-findings detail on the maternal-health project card, stewardship model for
-the community-data project, quote/target-launch date/domain/DNS registrar.
+file for `[ADD ACTUAL` and `[VERIFY BEFORE`. What's still placeholder: Google
+Scholar profile URL, University faculty profile URL, DOI/full-text links for
+most publications (only the Dryad dataset has a confirmed link), teaching
+philosophy statement, sample syllabi, findings detail on the maternal-health
+project card, stewardship model for the community-data project, quote/
+target-launch date/DNS registrar. LinkedIn and the domain are now real (see
+decision log).
 
 Copy that **is** real: the client's original headline/subhead/expertise line/
 research-philosophy statement/core-research-area descriptions/methods
@@ -158,3 +159,15 @@ site (GitHub Pages, same every time)".
   work, presented the same way standard scholarship in this field presents
   that evidence. Remaining media-strip/mosaic slots are still honest
   placeholders.
+- 2026-09-23 — Domain purchased and wired in: **drleiabelt.org**. Added
+  `CNAME` file to the repo root; replaced every `[ADD-ACTUAL-DOMAIN]`
+  placeholder (canonical, OG, JSON-LD) with the real domain. DNS is on
+  Namecheap — A records added for apex `@` (185.199.108/109/110/111.153) and
+  a CNAME for `www` → `richiegitmoney.github.io`, per the studio's standard
+  Pages setup in root `CLAUDE.md`. GitHub Pages custom-domain field + "Enforce
+  HTTPS" still need to be turned on in the repo's Settings → Pages (owner's
+  action, in progress as of this entry).
+- 2026-09-23 — Repo had to be deleted and recreated once — see the Hosting
+  &amp; deploy section above for why. Confirmed re-pushed clean afterward.
+- 2026-09-23 — Client confirmed LinkedIn: linkedin.com/in/leiaisresearch.
+  Wired into Contact section, footer icon, and JSON-LD `sameAs`.
