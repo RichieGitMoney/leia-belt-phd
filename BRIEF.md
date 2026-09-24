@@ -136,3 +136,21 @@ site (GitHub Pages, same every time)".
   ORCID link everywhere, real public email). Still placeholder: LinkedIn,
   Google Scholar, university profile URLs, and DOI/full-text links for most
   publications (the CV lists citations, not URLs, for most of them).
+- 2026-09-23 — Client supplied three more real research artifacts, now on
+  the page: (1) `assets/POST_sundown.pdf`, a 2-page conference poster,
+  "Sundown Towns Sightings by State" (conception &amp; research: Leia Belt;
+  visual engineering: Anthony Starks; source: Loewen 2005) — both panels
+  rendered to web images (`assets/poster-sundown-map.webp`,
+  `assets/poster-sundown-bystate.webp`) and placed in the Featured Research
+  media strip, linking out to the full PDF; (2)/(3) two real IRB-style
+  recruitment flyers for her ongoing qualitative studies —
+  `assets/flyer-photovoice-study.webp` (PhotoVoice study, birth workers) and
+  `assets/flyer-key-informant-interviews.webp` (key informant interviews,
+  birth-work business owners) — placed in the Participatory & Qualitative
+  Research mosaic. These are recruitment materials, not participant data, so
+  no consent/privacy concern. Note: the poster's pull-quote is a direct
+  historical citation of actual sundown-town warning-sign language (sourced
+  to Loewen's book) — displayed as-is since it's Dr. Belt's own real academic
+  work, presented the same way standard scholarship in this field presents
+  that evidence. Remaining media-strip/mosaic slots are still honest
+  placeholders.

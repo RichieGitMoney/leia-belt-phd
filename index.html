@@ -450,6 +450,18 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
   background: var(--ground); display: grid; place-items: center; text-align: center; padding: 10px;
   font-family: "IBM Plex Mono", monospace; font-size: .64rem; color: var(--muted); letter-spacing: .03em;
 }
+.media-figure {
+  aspect-ratio: 4/3; border-radius: var(--radius); border: 1px solid var(--border);
+  overflow: hidden; position: relative; background: var(--surface-2); margin: 0; display: block;
+  text-decoration: none;
+}
+.media-figure img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .3s ease; }
+.media-figure:hover img { transform: scale(1.04); }
+.media-figure figcaption {
+  position: absolute; inset: auto 0 0 0; background: linear-gradient(transparent, rgba(20,14,10,.75));
+  color: #F3E9D8; font-family: "IBM Plex Mono", monospace; font-size: .6rem; letter-spacing: .02em;
+  padding: 16px 10px 8px;
+}
 @media (max-width: 720px) { .media-strip { grid-template-columns: repeat(2,1fr); } }
 
 /* ---------- two-col editorial section (digital book / community data) ---------- */
@@ -477,6 +489,15 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
   border-radius: var(--radius-sm); border: 1px dashed var(--border);
   background: var(--ground); display: flex; align-items: flex-end; padding: 8px;
   font-family: "IBM Plex Mono", monospace; font-size: .6rem; color: var(--muted);
+}
+.mosaic-photo {
+  position: relative; border-style: solid; overflow: hidden; padding: 0; text-decoration: none;
+}
+.mosaic-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.mosaic-photo span {
+  position: relative; z-index: 1; width: 100%; padding: 8px 10px;
+  background: linear-gradient(transparent, rgba(20,14,10,.78));
+  color: #F3E9D8; font-family: "IBM Plex Mono", monospace; font-size: .6rem;
 }
 .mosaic-slot:nth-child(1) { grid-column: span 3; grid-row: span 2; }
 .mosaic-slot:nth-child(2) { grid-column: span 3; }
@@ -990,13 +1011,19 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
         </div>
       </div>
 
-      <div class="media-strip" aria-hidden="true">
-        <div class="media-slot">[Historical map]</div>
-        <div class="media-slot">[Newspaper record]</div>
+      <div class="media-strip">
+        <a class="media-figure" href="assets/POST_sundown.pdf" aria-label="View full poster PDF: Sundown Towns Sightings by State">
+          <img src="assets/poster-sundown-map.webp" alt="Choropleth map of the United States titled 'Sundown Towns Sightings by State,' shaded by number of documented unique sundown-town sites per state, with annotated case studies (Eugene OR, Rock Springs WY, Oildale CA, Elwood IN, Virginia Beach VA, Mobile AL).">
+          <figcaption>Sundown Towns Sightings by State — Belt (research), Starks (visual engineering)</figcaption>
+        </a>
+        <a class="media-figure" href="assets/POST_sundown.pdf" aria-label="View full poster PDF: Sundown Towns Sightings by State, ranked by state">
+          <img src="assets/poster-sundown-bystate.webp" alt="Bar chart ranking all 50 states by number of documented sundown-town sites, paired with the same choropleth map, from the same research poster.">
+          <figcaption>Sites by state, ranked — same poster, panel 2</figcaption>
+        </a>
         <div class="media-slot">[Oral history photo]</div>
-        <div class="media-slot">[Data visualization]</div>
+        <div class="media-slot">[Newspaper record]</div>
       </div>
-      <p class="pub-note" style="margin-top:18px">Archival materials, maps, and data visualizations above are placeholders — add only with appropriate permissions and citation.</p>
+      <p class="pub-note" style="margin-top:18px">Map source: Loewen, J. (2005). <em>Sundown Towns: A Hidden Dimension of American Racism.</em> The New Press. Conception &amp; research: Leia Belt. Visual engineering: Anthony Starks. Remaining slots are placeholders — add only with appropriate permissions and citation.</p>
     </div>
   </div>
 </section>
@@ -1062,11 +1089,17 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
     </div>
 
     <div class="mosaic" aria-hidden="true">
-      <div class="mosaic-slot">[PhotoVoice image]</div>
+      <a class="mosaic-slot mosaic-photo" href="assets/flyer-photovoice-study.webp" aria-label="View full PhotoVoice study recruitment flyer">
+        <img src="assets/flyer-photovoice-study.webp" alt="Recruitment flyer: 'PhotoVoice Study — Birth Workers, We Want to Hear from You,' inviting doulas, midwives, lactation consultants, and other birth workers to share their perspective through photos and conversation.">
+        <span>PhotoVoice study recruitment — birth workers</span>
+      </a>
       <div class="mosaic-slot">[Field photograph]</div>
       <div class="mosaic-slot">[Oral history excerpt]</div>
+      <a class="mosaic-slot mosaic-photo" href="assets/flyer-key-informant-interviews.webp" aria-label="View full key-informant-interviews recruitment flyer">
+        <img src="assets/flyer-key-informant-interviews.webp" alt="Recruitment flyer: 'Key Informant Interviews — Business Owners in Birth Work,' inviting birth-work business owners and organizational leaders to share their experiences building and sustaining birth-work businesses.">
+        <span>Key informant interviews — birth-work business owners</span>
+      </a>
       <div class="mosaic-slot">[Community photograph]</div>
-      <div class="mosaic-slot">[Interview artifact]</div>
       <div class="mosaic-slot">[Archival document]</div>
       <div class="mosaic-slot">[Listening session note]</div>
     </div>
