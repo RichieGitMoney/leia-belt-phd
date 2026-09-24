@@ -600,6 +600,10 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
 .format-list { margin-top: 26px; display: grid; gap: 8px; }
 .format-list li { font-size: var(--step--1); color: var(--ink-soft); padding-left: 16px; position: relative; }
 .format-list li::before { content: ""; position: absolute; left: 0; top: .6em; width: 6px; height: 6px; border-radius: 50%; background: var(--ochre); }
+.engagements { margin-top: 56px; }
+.engagement-list { display: grid; gap: 14px; list-style: none; padding: 0; margin-top: 16px; }
+.engagement-list li { display: flex; gap: 14px; font-size: var(--step--1); color: var(--ink-soft); line-height: 1.5; }
+.engagement-year { font-family: "IBM Plex Mono", monospace; font-size: .7rem; color: var(--accent-ink); flex-shrink: 0; width: 42px; padding-top: 2px; }
 
 /* ---------- teaching ---------- */
 .teach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -616,6 +620,14 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
   border: 1px dashed var(--border); border-radius: var(--radius-lg); padding: 48px 30px;
   text-align: center; color: var(--muted); font-family: "IBM Plex Mono", monospace; font-size: .88rem;
 }
+.ideas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.idea-card { background: var(--ground); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; }
+.idea-card__meta { display: flex; justify-content: space-between; gap: 10px; font-family: "IBM Plex Mono", monospace; font-size: .64rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 12px; }
+.idea-card__meta span:last-child { color: var(--muted); }
+.idea-card h3 { font-size: 1rem; line-height: 1.4; }
+.idea-card p { margin-top: 10px; font-size: .82rem; color: var(--muted); }
+@media (max-width: 900px) { .ideas-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .ideas-grid { grid-template-columns: 1fr; } }
 
 /* ---------- collaboration / final CTA ---------- */
 .collab {
@@ -749,7 +761,7 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
         <a class="btn btn--accent" href="#research">Explore My Research
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a class="btn btn--ghost" href="[ADD-ACTUAL-CV-LINK]">View CV</a>
+        <a class="btn btn--ghost" href="assets/Belt-CV.pdf">View CV</a>
         <a class="hero__tertiary" href="#collaborate">Collaborate With Me</a>
       </div>
     </div>
@@ -803,9 +815,9 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
 
         <div class="more-story" id="moreStory" hidden>
           <div class="prose">
-            <p><strong>Training &amp; pathway.</strong> [ADD ACTUAL INFORMATION — doctoral training: institution, department, year; postdoctoral training; formative mentors or intellectual influences, if she wants them named.]</p>
-            <p><strong>Interdisciplinary collaboration.</strong> [ADD ACTUAL INFORMATION — research centers, labs, or interdisciplinary teams she collaborates with.]</p>
-            <p><strong>Teaching.</strong> [ADD ACTUAL INFORMATION — how her teaching connects to her research; see the Teaching &amp; Mentorship section below for specifics once confirmed.]</p>
+            <p><strong>Training &amp; pathway.</strong> Dr. Belt holds a Ph.D. in Interdisciplinary Studies — a designed emphasis in Sociology, History, and Public Health — from the University of Iowa (2023), an M.A. in Sociology from the University of Iowa (2020), and a B.S. in Psychology and Sociology, with honors, from Kent State University (2017), where she was a Ronald E. McNair Scholar. Her dissertation, <em>"Sundown Towns and Contemporary Maternal Infant Health: An Interdisciplinary Mixed-Methods Analysis of Structural Racism and Its Public Health Legacy in the Midwest,"</em> laid the foundation for her ongoing sundown-towns research program.</p>
+            <p><strong>Fellowships &amp; training.</strong> She is a Health Affairs Equity Fellow (2024–2025), an AcademyHealth Health Data Policy Fellow (2024), and a graduate of the National Endowment for the Humanities' Born-Digital Scholarly Publishing Institute at Brown University Library (2024) — training that directly informs the born-digital book project below.</p>
+            <p><strong>Postdoctoral research.</strong> Before her current appointment, she was a Postdoctoral Scholar in the Department of Sociology and the Higher Education Race &amp; The Economy (HERE) Lab at UC Merced (2023–2025).</p>
           </div>
         </div>
         <button class="story-toggle" id="storyToggle" aria-expanded="false" aria-controls="moreStory">
@@ -817,7 +829,7 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
       <dl class="fact-card" data-io>
         <div>
           <dt>Current role</dt>
-          <dd class="placeholder">[VERIFY BEFORE PUBLISHING — exact title], Postdoctoral Researcher · University of California, Merced</dd>
+          <dd>Postdoctoral Scholar, Nicotine &amp; Cannabis Policy Center · University of California, Merced</dd>
         </div>
         <div>
           <dt>Methodological range</dt>
@@ -999,11 +1011,12 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
         <span class="badge" style="margin-bottom:14px;display:inline-block">Book in Development</span>
         <h2 id="book-title">A born-digital book, built for the questions it asks.</h2>
         <p class="lede">Dr. Belt is developing a born-digital scholarly project that combines narrative scholarship with interactive maps, historical records, oral histories, population health research, data visualization, photography, archival materials, and audio — designed for a platform built for multimedia scholarly publishing, in the tradition of projects hosted on platforms like Fulcrum and university press digital imprints.</p>
-        <p class="lede">[ADD ACTUAL INFORMATION — working title, current stage, target platform/press once confirmed. No publisher has been confirmed to have accepted or contracted this project.]</p>
+        <p class="lede">She trained for this work as a member of the National Endowment for the Humanities' Born-Digital Scholarly Publishing Institute at Brown University Library (2024). [ADD ACTUAL INFORMATION — working title, current stage, target platform/press once confirmed. No publisher has been confirmed to have accepted or contracted this project.]</p>
         <ul class="feature-list">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Narrative scholarship woven with interactive maps</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Oral-history audio and archival photography</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Data visualization built for public and scholarly audiences alike</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Already public: a ground-truthed sundown-towns spatial dataset, published via <a href="https://doi.org/10.5061/dryad.931zcrk2w" style="color:var(--accent-ink)">Dryad</a></li>
         </ul>
       </div>
       <div class="split__media">
@@ -1077,7 +1090,7 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
     <div class="section-head" data-io>
       <p class="eyebrow">Selected Projects</p>
       <h2 id="projects-title">Question, context, method, contribution.</h2>
-      <p>Each project below follows the shape of the research itself, rather than a one-size-fits-all case-study format. Details are placeholders pending confirmed project information.</p>
+      <p>Each project below follows the shape of the research itself, rather than a one-size-fits-all case-study format.</p>
     </div>
 
     <article class="project" data-io>
@@ -1090,11 +1103,11 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
       </div>
       <dl class="project__body">
         <div class="project__field"><dt>Question</dt><dd>How does the historical geography of racial exclusion continue to shape health and opportunity today?</dd></div>
-        <div class="project__field"><dt>Context</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
-        <div class="project__field"><dt>Dr. Belt's Role</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
-        <div class="project__field"><dt>Collaborators</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
+        <div class="project__field"><dt>Context</dt><dd>Originated as Dr. Belt's doctoral dissertation at the University of Iowa (2023) and has grown into an ongoing research program.</dd></div>
+        <div class="project__field"><dt>Dr. Belt's Role</dt><dd>Lead researcher — dissertation author and lead/co-author on subsequent publications</dd></div>
+        <div class="project__field"><dt>Collaborators</dt><dd>C. Gomez-Vidal, W. Zahnd, E. Mutch &amp; J. Williams (co-authors); dissertation committee: S. L. Watkins, S. Hitlin, A. Adkins-Jackson, N. Novak &amp; W. Zahnd</dd></div>
         <div class="project__field"><dt>Methods</dt><dd>Historical &amp; archival research, spatial analysis, oral history</dd></div>
-        <div class="project__field"><dt>Outputs</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
+        <div class="project__field"><dt>Outputs</dt><dd>Belt et al., "Sundown Towns and the Racialized Structure of Rural Health Inequities," <em>American Journal of Public Health</em> (accepted); Belt &amp; Mutch, sundown-towns spatial dataset, Dryad (2026); presentations at APHA, ASA, ABS &amp; IAPHS annual meetings (2024)</dd></div>
       </dl>
     </article>
 
@@ -1107,10 +1120,11 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
       </div>
       <dl class="project__body">
         <div class="project__field"><dt>Question</dt><dd>Who should shape, interpret, and own community health data?</dd></div>
-        <div class="project__field"><dt>Partnership</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
-        <div class="project__field"><dt>Process</dt><dd>Co-design, community stewardship, public-facing dashboards</dd></div>
+        <div class="project__field"><dt>Partnership</dt><dd>Nicotine &amp; Cannabis Policy Center, University of California, Merced — with A. Durazo, G. Zamperlin-Redondo &amp; I. Yen</dd></div>
+        <div class="project__field"><dt>Process</dt><dd>Co-design of a community-partnered data dashboard for tobacco and cannabis prevention</dd></div>
         <div class="project__field"><dt>Knowledge</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
         <div class="project__field"><dt>Stewardship</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
+        <div class="project__field"><dt>Outputs</dt><dd>Belt, L., Durazo, A., Zamperlin-Redondo, G., &amp; Yen, I. (2026, November) — APHA Annual Meeting, San Antonio, TX</dd></div>
       </dl>
     </article>
 
@@ -1118,15 +1132,15 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
       <div class="project__head">
         <div>
           <span class="project__cat">Maternal Health</span>
-          <h3 class="project__title">[ADD ACTUAL PROJECT TITLE — maternal &amp; infant health]</h3>
+          <h3 class="project__title">Sundown Towns as a Structural Exposure Measure for Maternal &amp; Infant Health</h3>
         </div>
       </div>
       <dl class="project__body">
-        <div class="project__field"><dt>Question</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
-        <div class="project__field"><dt>Context</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
-        <div class="project__field"><dt>Methods</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
+        <div class="project__field"><dt>Question</dt><dd>Can the historical geography of sundown towns serve as a measurable exposure for structural racism in maternal and infant health research?</dd></div>
+        <div class="project__field"><dt>Context</dt><dd>Developed through Dr. Belt's dissertation research at the University of Iowa and presented as a conceptual framework at the Association of Black Sociologists (2024).</dd></div>
+        <div class="project__field"><dt>Methods</dt><dd>Mixed methods — historical/geospatial exposure measurement combined with population health data</dd></div>
         <div class="project__field"><dt>Findings</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
-        <div class="project__field"><dt>Contribution</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
+        <div class="project__field"><dt>Contribution</dt><dd>Proposes sundown towns as a novel structural-racism exposure measure in perinatal health research</dd></div>
       </dl>
     </article>
   </div>
@@ -1152,6 +1166,7 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
           <li>Survey &amp; administrative data</li>
           <li>Multilevel approaches</li>
           <li>Geographic analysis</li>
+          <li>Tools: STATA, SPSS, R, Gephi</li>
         </ul>
       </div>
       <div class="mcluster" data-io>
@@ -1163,6 +1178,7 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
           <li>Oral history</li>
           <li>Thematic analysis</li>
           <li>Community listening</li>
+          <li>Tools: NVivo, Dedoose</li>
         </ul>
       </div>
       <div class="mcluster" data-io>
@@ -1174,6 +1190,7 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
           <li>Co-design</li>
           <li>Community crowdsourcing</li>
           <li>Participatory data interpretation</li>
+          <li>Tools: Qualtrics</li>
         </ul>
       </div>
       <div class="mcluster" data-io>
@@ -1185,6 +1202,7 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
           <li>GIS / spatial thinking</li>
           <li>Historical geography</li>
           <li>Mapping</li>
+          <li>Tools: ArcGIS, QGIS, ArcMap</li>
         </ul>
       </div>
       <div class="mcluster" data-io>
@@ -1209,36 +1227,51 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
     <div class="section-head" data-io>
       <p class="eyebrow">Professional Experience</p>
       <h2 id="experience-title">A path through sociology and population health.</h2>
-      <p>Full dates and titles are pending confirmation — see placeholders below.</p>
+      <p>From Kent State to the University of Iowa to UC Merced — full details in the CV below.</p>
     </div>
 
     <div class="timeline" data-io>
       <div class="tl-item">
-        <span class="tl-item__years placeholder">[VERIFY BEFORE PUBLISHING — years]</span>
-        <h3>[VERIFY BEFORE PUBLISHING — exact title, e.g. Postdoctoral Researcher]</h3>
+        <span class="tl-item__years">2025 – Present</span>
+        <h3>Postdoctoral Scholar, Nicotine &amp; Cannabis Policy Center</h3>
         <p class="tl-item__org">University of California, Merced</p>
-        <p>Research spanning sociology, public health, community-engaged research, structural racism, and population health.</p>
         <dl>
-          <div><dt>Focus</dt><dd>Structural racism, place, population health</dd></div>
-          <div><dt>Major projects</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
-          <div><dt>Leadership</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
-          <div><dt>Selected outputs</dt><dd class="placeholder-text">[ADD ACTUAL INFORMATION]</dd></div>
+          <div><dt>Focus</dt><dd>Community-engaged public health data infrastructure; tobacco &amp; cannabis prevention research</dd></div>
+          <div><dt>Major projects</dt><dd>Community-partnered data dashboard for tobacco and cannabis prevention across California's San Joaquin Valley and surrounding foothills (with A. Durazo, G. Zamperlin-Redondo &amp; I. Yen)</dd></div>
         </dl>
       </div>
       <div class="tl-item">
-        <span class="tl-item__years placeholder">[ADD ACTUAL INFORMATION — years]</span>
-        <h3>[ADD ACTUAL INFORMATION — doctoral training]</h3>
-        <p class="tl-item__org">[ADD ACTUAL INFORMATION — institution &amp; department]</p>
-        <p>[ADD ACTUAL INFORMATION — dissertation focus, funding, honors.]</p>
+        <span class="tl-item__years">2023 – 2025</span>
+        <h3>Postdoctoral Scholar, Department of Sociology</h3>
+        <p class="tl-item__org">Higher Education Race &amp; The Economy (HERE) Lab · University of California, Merced</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-item__years">2023</span>
+        <h3>Ph.D., Interdisciplinary Studies</h3>
+        <p class="tl-item__org">Designed emphasis in Sociology, History &amp; Public Health · University of Iowa</p>
+        <p>Dissertation: <em>"Sundown Towns and Contemporary Maternal Infant Health: An Interdisciplinary Mixed-Methods Analysis of Structural Racism and Its Public Health Legacy in the Midwest."</em></p>
+        <dl>
+          <div><dt>Committee</dt><dd>Shannon L. Watkins, PhD; Steven Hitlin, PhD; AJ Adkins-Jackson; Nicole Novak; Whitney Zahnd</dd></div>
+        </dl>
+      </div>
+      <div class="tl-item">
+        <span class="tl-item__years">2020</span>
+        <h3>M.A., Sociology</h3>
+        <p class="tl-item__org">University of Iowa</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-item__years">2017</span>
+        <h3>B.S., Psychology &amp; Sociology, with honors</h3>
+        <p class="tl-item__org">Kent State University · Minor in American Sign Language · Ronald E. McNair Scholar</p>
       </div>
     </div>
 
     <div class="cv-row">
-      <a class="btn btn--accent" href="[ADD-ACTUAL-CV-FILE]">
+      <a class="btn btn--accent" href="assets/Belt-CV.pdf">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
         Download CV
       </a>
-      <span class="cv-note">PDF forthcoming — replace with the current CV file before launch.</span>
+      <span class="cv-note">PDF, updated Fall 2026.</span>
     </div>
   </div>
 </section>
@@ -1250,7 +1283,7 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
     <div class="section-head" data-io>
       <p class="eyebrow">Publications &amp; Scholarship</p>
       <h2 id="pub-title">Publications</h2>
-      <p>Filter by category or search by title. Every entry below is a placeholder — replace with verified publication data before launch.</p>
+      <p>Filter by category or search by title. Drawn from Dr. Belt's CV (Fall 2026) — links marked [ADD ACTUAL LINK] still need a URL before launch.</p>
     </div>
 
     <div class="pub-controls">
@@ -1258,10 +1291,9 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
         <button type="button" aria-pressed="true" data-filter="all">All</button>
         <button type="button" aria-pressed="false" data-filter="peer-reviewed">Peer-Reviewed</button>
         <button type="button" aria-pressed="false" data-filter="commentary">Commentary</button>
-        <button type="button" aria-pressed="false" data-filter="book-chapter">Book Chapters</button>
-        <button type="button" aria-pressed="false" data-filter="in-progress">Works in Progress</button>
         <button type="button" aria-pressed="false" data-filter="report">Reports</button>
         <button type="button" aria-pressed="false" data-filter="digital">Digital Scholarship</button>
+        <button type="button" aria-pressed="false" data-filter="in-progress">Works in Progress</button>
         <button type="button" aria-pressed="false" data-filter="conference">Conference Presentations</button>
       </div>
       <form class="pub-search" role="search" onsubmit="return false">
@@ -1272,68 +1304,84 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
     </div>
 
     <div class="pub-list" id="pubList">
-      <article class="pub-row" data-cat="peer-reviewed" data-title="add actual title sundown towns and population health outcomes">
+      <article class="pub-row" data-cat="peer-reviewed" data-title="sundown towns and the racialized structure of rural health inequities">
         <div>
-          <div class="pub-row__meta"><span class="pub-cat">Peer-Reviewed Article</span><span class="status" data-status="forthcoming">Forthcoming</span></div>
-          <h3>[ADD ACTUAL TITLE — sundown towns and population health outcomes]</h3>
-          <p class="pub-row__cite">[ADD ACTUAL AUTHORS], [ADD ACTUAL JOURNAL], [ADD ACTUAL YEAR]</p>
-          <div class="pub-row__links"><a href="[ADD-ACTUAL-LINK]">DOI</a><a href="[ADD-ACTUAL-LINK]">Full text</a></div>
-        </div>
-      </article>
-      <article class="pub-row" data-cat="peer-reviewed" data-title="add actual title maternal infant health rural geography">
-        <div>
-          <div class="pub-row__meta"><span class="pub-cat">Peer-Reviewed Article</span><span class="status" data-status="review">Under Review</span></div>
-          <h3>[ADD ACTUAL TITLE — maternal &amp; infant health and rural geography]</h3>
-          <p class="pub-row__cite">[ADD ACTUAL AUTHORS], [ADD ACTUAL JOURNAL / TARGET JOURNAL]</p>
-          <div class="pub-row__links"><a href="[ADD-ACTUAL-LINK]">Full text</a></div>
-        </div>
-      </article>
-      <article class="pub-row" data-cat="commentary" data-title="add actual title structural determinants commentary">
-        <div>
-          <div class="pub-row__meta"><span class="pub-cat">Commentary</span><span class="status" data-status="published">Published</span></div>
-          <h3>[ADD ACTUAL TITLE — commentary on structural determinants of health]</h3>
-          <p class="pub-row__cite">[ADD ACTUAL AUTHORS], [ADD ACTUAL OUTLET], [ADD ACTUAL YEAR]</p>
+          <div class="pub-row__meta"><span class="pub-cat">Peer-Reviewed Article</span><span class="status" data-status="forthcoming">Accepted</span></div>
+          <h3>Sundown Towns and the Racialized Structure of Rural Health Inequities</h3>
+          <p class="pub-row__cite">Belt, L., Gomez-Vidal, C., Zahnd, W., Mutch, E., &amp; Williams, J. — American Journal of Public Health</p>
           <div class="pub-row__links"><a href="[ADD-ACTUAL-LINK]">DOI</a></div>
         </div>
       </article>
-      <article class="pub-row" data-cat="book-chapter" data-title="add actual title historical structural racism book chapter">
+      <article class="pub-row" data-cat="peer-reviewed" data-title="teaching across the fgwc terrain reflections of sociology educators">
         <div>
-          <div class="pub-row__meta"><span class="pub-cat">Book Chapter</span><span class="status" data-status="revise">Revise &amp; Resubmit</span></div>
-          <h3>[ADD ACTUAL TITLE — chapter on historical structural racism]</h3>
-          <p class="pub-row__cite">[ADD ACTUAL AUTHORS], in [ADD ACTUAL EDITED VOLUME]</p>
+          <div class="pub-row__meta"><span class="pub-cat">Peer-Reviewed Article</span><span class="status" data-status="published">Published</span></div>
+          <h3>Teaching across the FGWC Terrain: Reflections of Sociology Educators</h3>
+          <p class="pub-row__cite">Oehmen, N. B., Haylett, J., Belt, L., &amp; Clark, J. (2023) — Teaching Sociology</p>
+          <div class="pub-row__links"><a href="[ADD-ACTUAL-LINK]">DOI</a></div>
         </div>
       </article>
-      <article class="pub-row" data-cat="in-progress" data-title="add actual title community engaged data infrastructure working paper">
+      <article class="pub-row" data-cat="digital" data-title="sundown towns ground truthed spatial dataset">
         <div>
-          <div class="pub-row__meta"><span class="pub-cat">Working Paper</span><span class="status" data-status="prep">In Preparation</span></div>
-          <h3>[ADD ACTUAL TITLE — community-engaged public health data infrastructure]</h3>
-          <p class="pub-row__cite">[ADD ACTUAL AUTHORS]</p>
+          <div class="pub-row__meta"><span class="pub-cat">Digital Scholarship · Data Product</span><span class="status" data-status="published">Published</span></div>
+          <h3>Sundown Towns Ground-Truthed Spatial Dataset (United States), v1.0</h3>
+          <p class="pub-row__cite">Belt, L. D., &amp; Mutch, E. (2026) — Dryad [Data set]</p>
+          <div class="pub-row__links"><a href="https://doi.org/10.5061/dryad.931zcrk2w">doi.org/10.5061/dryad.931zcrk2w</a></div>
         </div>
       </article>
-      <article class="pub-row" data-cat="digital" data-title="add actual title digital archive sundown towns">
+      <article class="pub-row" data-cat="commentary" data-title="unveiling the complex racial history of the midwest">
         <div>
-          <div class="pub-row__meta"><span class="pub-cat">Digital Scholarship</span><span class="status" data-status="prep">In Preparation</span></div>
-          <h3>[ADD ACTUAL TITLE — digital archive / interactive map project]</h3>
-          <p class="pub-row__cite">[ADD ACTUAL PLATFORM / PUBLISHER]</p>
+          <div class="pub-row__meta"><span class="pub-cat">Commentary</span><span class="status" data-status="published">Published</span></div>
+          <h3>Unveiling the Complex Racial History of the Midwest: A Call for an Intersectional and Systems Approach in Maternal Healthcare Design</h3>
+          <p class="pub-row__cite">Dorcoo, S., &amp; Belt, L. (October 2024) — Lancet Race and Health Quarterly</p>
+          <div class="pub-row__links"><a href="[ADD-ACTUAL-LINK]">Full text</a></div>
         </div>
       </article>
-      <article class="pub-row" data-cat="report" data-title="add actual title community health report">
+      <article class="pub-row" data-cat="commentary" data-title="understanding the need for sundown towns measures in health service research">
+        <div>
+          <div class="pub-row__meta"><span class="pub-cat">Commentary</span><span class="status" data-status="published">Published</span></div>
+          <h3>Understanding the Need for Sundown Towns Measures in Health Service Research</h3>
+          <p class="pub-row__cite">Belt, L. (August 2024) — AcademyHealth</p>
+          <div class="pub-row__links"><a href="[ADD-ACTUAL-LINK]">Full text</a></div>
+        </div>
+      </article>
+      <article class="pub-row" data-cat="report" data-title="academyhealth response to chai assurance standards guide">
         <div>
           <div class="pub-row__meta"><span class="pub-cat">Report</span><span class="status" data-status="published">Published</span></div>
-          <h3>[ADD ACTUAL TITLE — community health report]</h3>
-          <p class="pub-row__cite">[ADD ACTUAL COMMISSIONING ORGANIZATION], [ADD ACTUAL YEAR]</p>
+          <h3>AcademyHealth Response to the Coalition for Health AI (CHAI) Assurance Standards Guide and Reporting Checklist</h3>
+          <p class="pub-row__cite">Belt, L., AcademyHealth (July 2024)</p>
         </div>
       </article>
-      <article class="pub-row" data-cat="conference" data-title="add actual title conference presentation">
+      <article class="pub-row" data-cat="report" data-title="academyhealth response to ostp on disability data needs">
+        <div>
+          <div class="pub-row__meta"><span class="pub-cat">Report</span><span class="status" data-status="published">Published</span></div>
+          <h3>AcademyHealth Response to OSTP on Disability Data Needs</h3>
+          <p class="pub-row__cite">Belt, L., AcademyHealth — White House Office of Science and Technology Policy (July 2024)</p>
+        </div>
+      </article>
+      <article class="pub-row" data-cat="in-progress" data-title="invisible suffering online racism and black youth suicide">
+        <div>
+          <div class="pub-row__meta"><span class="pub-cat">Commentary</span><span class="status" data-status="review">Under Review</span></div>
+          <h3>Invisible Suffering: Confronting the Intersection of Online Racism and Black Youth Suicide</h3>
+          <p class="pub-row__cite">Belt, L., &amp; Spates, K. — Health Affairs Forefront</p>
+        </div>
+      </article>
+      <article class="pub-row" data-cat="conference" data-title="unveiling the hidden legacy of sundown towns geospatial lens">
         <div>
           <div class="pub-row__meta"><span class="pub-cat">Conference Presentation</span><span class="status" data-status="published">Presented</span></div>
-          <h3>[ADD ACTUAL TITLE — conference paper / poster]</h3>
-          <p class="pub-row__cite">[ADD ACTUAL CONFERENCE], [ADD ACTUAL YEAR]</p>
+          <h3>Unveiling the Hidden Legacy of Sundown Towns: Measuring Structural Racism through an Interdisciplinary Geospatial Lens</h3>
+          <p class="pub-row__cite">Belt, L. (2024) — American Public Health Association (APHA) Annual Meeting</p>
+        </div>
+      </article>
+      <article class="pub-row" data-cat="conference" data-title="canonizing whiteness and maleness sociological thought">
+        <div>
+          <div class="pub-row__meta"><span class="pub-cat">Conference Presentation</span><span class="status" data-status="published">Presented</span></div>
+          <h3>Canonizing Whiteness and Maleness: The Overt and Covert Forces Shaping Sociological Thought</h3>
+          <p class="pub-row__cite">Belt, L. (2024) — American Sociological Association (ASA) Annual Conference, Montreal</p>
         </div>
       </article>
     </div>
     <p class="pub-empty" id="pubEmpty" hidden>No publications match that search.</p>
-    <p class="pub-note">All entries above are placeholders and must be replaced with verified titles, authors, journals, years, and links before this page is published.</p>
+    <p class="pub-note">Full presentation and guest-lecture history in the CV above — this list is a representative selection, not the complete record.</p>
   </div>
 </section>
 
@@ -1363,7 +1411,7 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
     <div class="section-head" data-io>
       <p class="eyebrow">Speaking &amp; Conversations</p>
       <h2 id="speaking-title">Speaking &amp; Conversations</h2>
-      <p>Dr. Belt is available for select academic talks, guest lectures, panels, workshops, and community conversations. [VERIFY BEFORE PUBLISHING before describing any specific past engagement.]</p>
+      <p>Dr. Belt has spoken at national conferences, university departments, and community convenings — including a keynote address for the "It Starts with US" Conference (Community Action Partnership Pennsylvania, 2024) — and is available for academic talks, guest lectures, panels, workshops, and community conversations.</p>
     </div>
 
     <div class="speak-grid">
@@ -1395,6 +1443,18 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
         <a class="btn btn--accent" style="margin-top:26px" href="#contact">Invite Dr. Belt to Speak</a>
       </div>
     </div>
+
+    <div class="engagements" data-io>
+      <h3 style="font-size:1.05rem">Selected engagements</h3>
+      <ul class="engagement-list">
+        <li><span class="engagement-year">2024</span> Keynote, "It Starts with US" Conference — Community Action Partnership Pennsylvania, Lancaster, PA</li>
+        <li><span class="engagement-year">2025</span> Invited talk, Health Systems and Population Health Department — University of Washington</li>
+        <li><span class="engagement-year">2025</span> Spring Speaker Series, Public Health Department — University of California, Merced</li>
+        <li><span class="engagement-year">2024</span> "Unveiling the Hidden Legacy of Sundown Towns" — American Public Health Association (APHA) Annual Meeting</li>
+        <li><span class="engagement-year">2024</span> "Canonizing Whiteness and Maleness" — American Sociological Association (ASA) Annual Conference, Montreal</li>
+        <li><span class="engagement-year">2024</span> Panelist, "Hot Topics: AI and Large Language Models, Research, and Policy" — AcademyHealth Health Policy Orientation</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -1405,7 +1465,7 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
     <div class="section-head" data-io>
       <p class="eyebrow">Teaching &amp; Mentorship</p>
       <h2 id="teaching-title">Teaching &amp; Mentorship</h2>
-      <p>Course titles, syllabi, and mentorship details below are placeholders pending confirmation — Dr. Belt's teaching areas connect directly to her research.</p>
+      <p>Dr. Belt's teaching areas connect directly to her research — a teaching philosophy statement and sample syllabi are still to come.</p>
     </div>
 
     <div class="teach-grid">
@@ -1430,14 +1490,19 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
         </ul>
       </div>
       <div class="teach-card" data-io>
-        <h3>Courses &amp; mentorship</h3>
+        <h3>Selected guest lectures</h3>
         <ul>
-          <li class="placeholder-text">[ADD ACTUAL INFORMATION — courses taught]</li>
-          <li class="placeholder-text">[ADD ACTUAL INFORMATION — guest lectures]</li>
-          <li class="placeholder-text">[ADD ACTUAL INFORMATION — student mentorship / research-group leadership]</li>
+          <li>"Community-Engaged Scholarship" — Research Methods, Cal State Dominguez Hills (2026)</li>
+          <li>"Intersectionality and Community Methods" — Dartmouth College (2025)</li>
+          <li>"Mapping in Community-Engaged Research" — UC Riverside (2025)</li>
+          <li>"Sundown Towns, Rurality &amp; Maternal Health" — Black Mental Health, University of Pittsburgh (2025)</li>
+          <li>"AI and Health" — AI and Health Equity, University of Iowa (2024)</li>
+          <li>Qualitative Research Methods — College of Public Health, University of Iowa (2022, 2023)</li>
         </ul>
       </div>
     </div>
+
+    <p class="pub-note" style="margin-top:24px">Mentorship: Undergraduate Student Success Internship (SSI) Mentorship Program, University of California, Merced (2024).</p>
     <p class="pub-note" style="margin-top:24px">Teaching philosophy statement and sample syllabi: [ADD ACTUAL INFORMATION].</p>
   </div>
 </section>
@@ -1451,9 +1516,24 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
       <h2 id="ideas-title">Public scholarship &amp; shorter writing.</h2>
       <p>A home for essays, commentary, interviews, and research reflections on place, health, race, history, maternal health, rural America, research methods, and community research.</p>
     </div>
-    <div class="ideas-empty" data-io>
-      No public pieces published yet. This space is ready for essays, interviews, and commentary as they're written — nothing here is fabricated in the meantime.
+    <div class="ideas-grid">
+      <article class="idea-card" data-io>
+        <div class="idea-card__meta"><span>AI &amp; Race</span><span>March 2023</span></div>
+        <h3>If ChatGPT Reflects Hair Bias, What Other Racial Bias Does It Spread?</h3>
+        <p>New Thinking · Belt, Leia</p>
+      </article>
+      <article class="idea-card" data-io>
+        <div class="idea-card__meta"><span>Maternal Health</span><span>August 2023</span></div>
+        <h3>It's Possible to Change Low Rates of Black Breastfeeding, But It Starts with Acknowledging the Legacy of Slavery</h3>
+        <p>Belt, Leia &amp; Inderstrodt, J.</p>
+      </article>
+      <article class="idea-card" data-io>
+        <div class="idea-card__meta"><span>Maternal Health</span><span>August 2023</span></div>
+        <h3>Breastfeeding Can Help Save New Black Moms — Who Are Nearly 3 Times More Likely to Die</h3>
+        <p>Inderstrodt, Jill &amp; Belt, L.</p>
+      </article>
     </div>
+    <p class="pub-note" style="margin-top:20px">Links to full pieces: [ADD ACTUAL LINK]. More of Dr. Belt's commentary and reports appear in the Publications section above.</p>
   </div>
 </section>
 
@@ -1492,9 +1572,9 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
       <div data-io>
         <p class="prose">Share a bit about what you'd like to discuss — research collaboration, speaking, an academic opportunity, consulting, media, mentorship, or a community partnership — and Dr. Belt will follow up.</p>
         <div class="contact-links">
-          <a href="mailto:[ADD-ACTUAL-EMAIL]">
+          <a href="mailto:drleiabelt@gmail.com">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg>
-            [ADD ACTUAL EMAIL]
+            drleiabelt@gmail.com
           </a>
           <a href="[ADD-ACTUAL-LINK]">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 018 0v8"/></svg>
@@ -1504,9 +1584,9 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
             Google Scholar — [ADD ACTUAL LINK]
           </a>
-          <a href="[ADD-ACTUAL-LINK]">
+          <a href="https://orcid.org/0009-0005-4371-1819">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
-            ORCID — [ADD ACTUAL LINK]
+            ORCID — 0009-0005-4371-1819
           </a>
           <a href="[ADD-ACTUAL-LINK]">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
@@ -1573,8 +1653,8 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
         <p>Sociology · Population Health · Place · Structural Racism</p>
         <div class="footer__socials">
           <a href="[ADD-ACTUAL-LINK]" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5.001A2.5 2.5 0 014.98 3.5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z"/></svg></a>
-          <a href="[ADD-ACTUAL-LINK]" aria-label="Google Scholar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 9l4 2.5V17l7 5 7-5v-5.5L21 9zm0 2.4L18.3 9 12 12.8 5.7 9zM7 12.9l5 3.1 5-3.1v3.1l-5 3.6-5-3.6z"/></svg></a>
-          <a href="mailto:[ADD-ACTUAL-EMAIL]" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg></a>
+          <a href="https://orcid.org/0009-0005-4371-1819" aria-label="ORCID"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg></a>
+          <a href="mailto:drleiabelt@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg></a>
         </div>
       </div>
       <div>
@@ -1599,7 +1679,7 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
         <h4>Scholarly Profiles</h4>
         <ul>
           <li><a href="[ADD-ACTUAL-LINK]">Google Scholar</a></li>
-          <li><a href="[ADD-ACTUAL-LINK]">ORCID</a></li>
+          <li><a href="https://orcid.org/0009-0005-4371-1819">ORCID</a></li>
           <li><a href="[ADD-ACTUAL-LINK]">University Profile</a></li>
         </ul>
       </div>
@@ -1622,23 +1702,29 @@ section { padding-block: clamp(60px, 8vw, 120px); position: relative; }
       "givenName": "Leia",
       "familyName": "Belt",
       "honorificSuffix": "PhD",
-      "jobTitle": "Sociologist & Population Health Researcher",
+      "jobTitle": "Postdoctoral Scholar, Nicotine & Cannabis Policy Center",
       "description": "Interdisciplinary sociologist and population health researcher studying how history, place, and structural racism shape contemporary health and inequality.",
       "url": "https://[ADD-ACTUAL-DOMAIN]/",
+      "email": "mailto:drleiabelt@gmail.com",
       "affiliation": {
         "@type": "CollegeOrUniversity",
         "name": "University of California, Merced"
       },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "University of Iowa" },
+        { "@type": "CollegeOrUniversity", "name": "Kent State University" }
+      ],
       "knowsAbout": [
-        "Sociology", "Population Health", "Structural Racism", "Sundown Towns",
-        "Maternal and Infant Health", "Rural Health", "Structural Determinants of Health",
-        "Community-Engaged Research", "Mixed Methods Research", "Historical Sociology",
-        "Spatial Health Research", "Digital Scholarship"
+        "Medical Sociology", "Intersectionality", "Mixed Methods", "Structural Racism and Health Inequities",
+        "Social and Spatial Determinants of Health", "Social Epidemiology", "Spatial Inequality",
+        "Maternal and Infant Health", "Social Psychology", "Algorithmic Racism and Data Capitalism",
+        "Community-Engaged Research", "Digital Scholarship and Data Visualization", "Sundown Towns",
+        "Rural Health", "Historical Sociology"
       ],
       "sameAs": [
+        "https://orcid.org/0009-0005-4371-1819",
         "[ADD-ACTUAL-LINK — LinkedIn]",
         "[ADD-ACTUAL-LINK — Google Scholar]",
-        "[ADD-ACTUAL-LINK — ORCID]",
         "[ADD-ACTUAL-LINK — University profile]"
       ]
     },

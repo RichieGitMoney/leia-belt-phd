@@ -13,9 +13,10 @@ _Quote:_ [ADD ACTUAL INFORMATION]
 - **What she does, in one sentence:** Interdisciplinary sociologist and population
   health researcher studying how history, place, and structural racism shape
   contemporary health and inequality.
-- **Main contact:** [ADD ACTUAL INFORMATION — email, best way to reach]
-- **Current institution:** University of California, Merced (postdoctoral
-  research) — [VERIFY BEFORE PUBLISHING: exact title, department, dates]
+- **Main contact:** drleiabelt@gmail.com (public-facing; confirmed by client)
+- **Current institution:** Postdoctoral Scholar, Nicotine &amp; Cannabis Policy
+  Center, University of California, Merced (2025–present) — confirmed via CV
+  (`CV_Belt_Fall2026_website`, provided 2026-09-23)
 
 This is **not** a Golden Valley Web local-business site. It does not use the
 `_template/` SaaS-style scaffold or the studio's three-service positioning —
@@ -25,34 +26,32 @@ the client (via Richie) provided in full.
 
 ## Content status — read before editing
 
-The client supplied extensive **positioning, tone, and section-by-section
-copy direction**, but very little concrete biographical/CV data (exact
-degrees, dates, publications, grants, collaborators, courses, speaking
-engagements, links). Per the client's own explicit content rule:
-
-> Do not fabricate biographical information, academic credentials, employment,
-> research findings, publications, awards, grants, clients, collaborators,
-> statistics, participant quotations, media appearances, speaking engagements,
-> teaching experience, book contracts, or institutional partnerships.
-
-So `index.html` uses the client's own placeholder convention throughout:
+The client's initial design brief supplied extensive **positioning, tone, and
+section-by-section copy direction**, but almost no concrete biographical/CV
+data. On 2026-09-23 the client supplied Dr. Belt's actual CV
+(`CV_Belt_Fall2026_website.docx`/`.pdf`), which now backs most of the site's
+factual content — see the decision log below for exactly what changed. Per
+the client's own explicit content rule, still-unverified content keeps the
+placeholder convention:
 - `[ADD ACTUAL INFORMATION]` — missing facts.
-- `[VERIFY BEFORE PUBLISHING]` — facts entered but not yet confirmed (e.g. the
-  UC Merced postdoc details, mentioned once in the brief without dates).
+- `[VERIFY BEFORE PUBLISHING]` — facts entered but not yet confirmed.
 
-**Before launch, replace every bracketed placeholder** — search the file for
-`[ADD ACTUAL` and `[VERIFY BEFORE`. Sections still fully placeholder pending
-real content: Professional Experience (dates/titles), Publications (every
-entry), Speaking engagements (every entry), Teaching (courses), Ideas &
-Perspectives (all articles — currently an honest empty state), Selected
-Projects (collaborators/methods/outputs), Contact (all external profile
-links), CV file.
+**Before launch, replace every remaining bracketed placeholder** — search the
+file for `[ADD ACTUAL` and `[VERIFY BEFORE`. What's still placeholder after
+the CV pass: LinkedIn URL, Google Scholar profile URL, University faculty
+profile URL, DOI/full-text links for most publications (only the Dryad
+dataset has a confirmed link), teaching philosophy statement, sample syllabi,
+findings detail on the maternal-health project card, stewardship model for
+the community-data project, quote/target-launch date/domain/DNS registrar.
 
-Copy that **is** real (used near-verbatim from the client's brief, not
-invented): the headline, subhead, expertise line, research-philosophy
-statement (History/Place/Health/Community), the seven core-research-area
-descriptions, the methods clusters, and the sundown-towns project framing.
-Treat all of that as approved editorial copy, not draft.
+Copy that **is** real: the client's original headline/subhead/expertise line/
+research-philosophy statement/core-research-area descriptions/methods
+clusters (from the design brief), plus — from the CV — her degrees and
+dissertation, appointment history, publications, grants/fellowships,
+presentations, guest lectures, professional societies, software
+competencies, and her ORCID (0009-0005-4371-1819) and public contact email
+(drleiabelt@gmail.com, confirmed by the client directly, distinct from her
+institutional lbelt@ucmerced.edu). Treat all of that as approved, not draft.
 
 ## Brand direction (from client brief, not GVW defaults)
 
@@ -117,3 +116,23 @@ site (GitHub Pages, same every time)".
   a plain backdrop) — usable now, but worth a professional retouch or a
   reshoot against a plain background before public launch. See the
   `[VERIFY BEFORE PUBLISHING]` caption under the portrait.
+- 2026-09-23 — Client supplied Dr. Belt's CV (docx, then a cleaner PDF —
+  `assets/Belt-CV.pdf` is now the Download-CV target on the page). Used it to
+  replace placeholders with real content across: About (fact card + full-story
+  training/fellowships/postdoc paragraphs), Professional Experience (full
+  5-entry timeline: current postdoc → HERE Lab postdoc → PhD → MA → BS),
+  Publications (10 real entries: 2 peer-reviewed, 1 Dryad dataset with a live
+  DOI link, 2 commentary, 2 AcademyHealth policy-response reports, 1
+  under-review, 2 conference presentations — dropped the "Book Chapters"
+  filter since she has none), Selected Projects (all 3 cards now have real
+  collaborators/methods/outputs; the maternal-health card's "Findings" field
+  is still placeholder — the CV doesn't give published findings text, only
+  the conceptual framework), Methods (added her real software competencies:
+  STATA/SPSS/R/Gephi, NVivo/Dedoose, Qualtrics, ArcGIS/QGIS/ArcMap), Speaking
+  (added a "Selected engagements" list, including her confirmed 2024 keynote
+  — safe to call her a keynote speaker now), Teaching (real guest-lecture
+  list + real mentorship-program line), Ideas & Perspectives (3 real
+  short-form pieces, replacing the empty state), Contact/footer/JSON-LD (real
+  ORCID link everywhere, real public email). Still placeholder: LinkedIn,
+  Google Scholar, university profile URLs, and DOI/full-text links for most
+  publications (the CV lists citations, not URLs, for most of them).
