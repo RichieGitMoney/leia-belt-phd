@@ -94,10 +94,14 @@ with `knowsAbout`, `ScholarlyArticle` stubs on publication entries.
 
 ## Hosting & deploy
 
-- **Repo:** github.com/RichieGitMoney/leia-belt-phd — [VERIFY BEFORE
-  PUBLISHING: confirm slug/repo name and GitHub owner with the client]
-- **Domain live at:** [ADD ACTUAL INFORMATION]
-- **DNS registrar:** [ADD ACTUAL INFORMATION — Namecheap per studio default?]
+- **Repo:** github.com/RichieGitMoney/leia-belt-phd (had to be deleted and
+  recreated once on 2026-09-23 — the first attempt picked up a stray
+  auto-generated `.gitattributes` commit from a mixed-up GitHub Desktop
+  session pointed at the wrong local folder; recreated empty, republished
+  clean from the correct folder)
+- **Domain live at:** drleiabelt.org (purchased 2026-09-23) — `CNAME` file
+  added to the repo root
+- **DNS registrar:** [ADD ACTUAL INFORMATION — confirm with client]
 
 Deploy steps are the studio standard — see root `CLAUDE.md` → "Deploying a
 site (GitHub Pages, same every time)".
